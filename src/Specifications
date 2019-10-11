@@ -1,0 +1,24 @@
+Data Model:
+
+- An object can be either a file or directory.
+- 3 values are required:
+       - isDir (DIR or FILE)
+       - file path
+       - size of the object (if DIR, combined size of all files contained)
+
+- An abstract class File.java will satisfy the contract, making unit tests easy
+- Two child classes Directory.java and PrimitiveFile.java will provide more specific implementations
+- The abstract class will override a toString() method to print information in the desired format
+- Given a more complex object, a factory would be required (organisational purposes); but given that the data model is
+    simple, this is unnecessary.
+- DuUtils will have 2 static methods:
+        - File[] getDirectory(String path) which will get all files in a directory and return them within our data model
+        - void quickSort(File[] files) which will run quickSort on the files
+- Du will run:
+        - File[] files = DuUtils.getDirectory(args[0]);
+        - DuUtils.quickSort(files);
+        - Parallel stream of files; overridden toString method
+
+- There will be 2 unit tests:
+        - Unit test DuUtils.getDirectory
+        - Unit test DuUtils.quickSort
