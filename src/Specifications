@@ -13,12 +13,10 @@ Data Model:
     simple, this is unnecessary.
 - DuUtils will have 2 static methods:
         - File[] getDirectory(String path) which will get all files in a directory and return them within our data model
-        - void quickSort(File[] files) which will run quickSort on the files
+        - File[] sort(File[] files) which will run stream sort on the files
 - Du will run:
-        - File[] files = DuUtils.getDirectory(args[0]);
-        - DuUtils.quickSort(files);
-        - Parallel stream of files; overridden toString method
+        - File[] files = DuUtils.sort(DuUtils.getDirectory(args[0]));
 
 - There will be 2 unit tests:
         - Unit test DuUtils.getDirectory
-        - Unit test DuUtils.quickSort
+        - Unit test DuUtils.sort
